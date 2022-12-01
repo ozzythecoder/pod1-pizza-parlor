@@ -16,7 +16,7 @@ function Header({text, showCart}) {
                     id="cart"
                     onClick={() => history.push('/checkout')}>
                     <ShoppingCartIcon/>
-                    <h3 id="total">Total: { useSelector(store => store.currentOrder.total).toFixed(2)}</h3>
+                    <h3 id="total">Total: ${ useSelector(store => store.currentOrder.total).toFixed(2)}</h3>
                 </div>}
         </header>
 

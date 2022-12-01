@@ -62,7 +62,7 @@ function Checkout() {
     return (
       <tr key={i}>
         <td>{thisPizza.name}</td>
-        <td>{thisPizza.price}</td>
+        <td>${thisPizza.price}</td>
       </tr>
     )
   })
@@ -92,7 +92,7 @@ function Checkout() {
       {/* TABLE END */}
 
       {/* TOTAL */}
-      <p>Total: {currentOrder.total}</p>
+      <p>Total: ${currentOrder.total.toFixed(2)}</p>
 
       {/* CHECKOUT BUTTON */}
       <button onClick={checkoutButton}>CHECKOUT</button>
