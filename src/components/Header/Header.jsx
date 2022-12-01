@@ -11,13 +11,13 @@ function Header({text, showCart}) {
     return (
         <header className='App-header'>
             <h1 className='App-title'>{text}</h1>
-                
+                {showCart && 
                 <div 
                     id="cart"
                     onClick={() => history.push('/checkout')}>
                     <ShoppingCartIcon/>
                     <h3 id="total">Total: { useSelector(store => store.currentOrder.total).toFixed(2)}</h3>
-                </div>
+                </div>}
         </header>
 
     )

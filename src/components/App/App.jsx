@@ -16,13 +16,13 @@ function App() {
         <Route exact path = '/'>
           <Header
             text="Prime Pizza"
-            showCart='true'/>
+            showCart={true}/>
           <PizzaMenu />
         </Route>
         <Route exact path ="/customerInfo">
         <Header
             text="Prime Pizza"
-            showCart='true'/>
+            showCart={true}/>
           <CustomerInfoForm />
         </Route>
         <Route exact path = '/admin'>
