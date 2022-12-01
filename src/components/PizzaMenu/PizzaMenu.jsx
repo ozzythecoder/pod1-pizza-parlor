@@ -9,6 +9,7 @@ export default function PizzaMenu() {
   }
 
   return (<div>
+    <h2>Menu</h2>
     <PizzaList />
     <button onClick={continueOrder}>Next</button>
   </div>)
