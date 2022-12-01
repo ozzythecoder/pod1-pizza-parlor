@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import PizzaListItem from "../PizzaListItem/PizzaListItem";
+import './PizzaList.css'
 
 export default function PizzaList() {
 
@@ -23,11 +24,14 @@ export default function PizzaList() {
 
   const menuList = pizzas.map(pizza => {
     return (
-      <PizzaListItem key={pizza.id} pizza={pizza} />
+      <PizzaListItem
+        key={pizza.id}
+        pizza={pizza}
+        />
     )
   })
 
-  return (<div>
+  return (<div className="pizza-list">
     {menuList}
   </div>)
 }

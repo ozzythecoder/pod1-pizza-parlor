@@ -9,10 +9,10 @@ export default function PizzaListItem({ pizza }) {
     console.log('in handleClick', pizza.id);
   }
 
-  return (<div>
-    <h3>{pizza.name}</h3>
-    <p>{pizza.price}</p>
-    <p>{pizza.description}</p>
+  return (<div className="pizza-menu-item">
+    <h3 className="pizza-menu-name">{pizza.name}</h3>
+    <p className="pizza-menu-price">{pizza.price}</p>
+    <p className="pizza-menu-description">{pizza.description}</p>
     <button onClick={handleClick}>Add</button>
   </div>)
 }

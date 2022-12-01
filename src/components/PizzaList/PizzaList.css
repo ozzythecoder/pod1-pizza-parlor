@@ -1,0 +1,13 @@
+.pizza-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 5%;
+  justify-content: center;
+}
+
+.pizza-menu-item {
+  width: 240px;
+  padding: 25px;
+  margin: 10px;
+  border: 1px black solid;
+}
