@@ -9,8 +9,6 @@ Render data from pizza.name and pizza.price in the table
 from the pizza option the customer selected in step one.
 */
 function Checkout() {
-    const pizza = useSelector((store) => store.cartReducer)
-    const customer = useSelector((store) => store.customerReducer)
     const history = useHistory();
     const dispatch = useDispatch(); // establish dispatch
 
@@ -61,4 +59,45 @@ function Checkout() {
             console.error(err);
         })
     }
+
+    return(
+        <div>
+
+            <p>{customer.customer_name}</p>
+            <p>{customer.street_address}</p>
+            <p>{customer.city}</p>
+            <p>{customer.zip}</p>
+            <h1>Checkout</h1>
+
+            {/* TABLE START*/}
+            <table>
+                {/* TABLE HEADERS */}
+                <tr>
+                    <th>Name</th>
+                    <th>Cost</th>
+                </tr>
+                {/* TABLE DATA */}
+                <tr>
+                    <td>
+                        {/* PIZZA NAME */}
+                        {pizza.name}
+                    </td>
+                    <td>
+                        {/* PIZZA COST */}
+                        {pizza.price}
+                    </td>
+                </tr>
+            </table> 
+            {/* TABLE END */}
+
+            {/* TOTAL */}
+            <p>Total: {pizza.price}</p>
+
+            {/* CHECKOUT BUTTON */}
+            <button onClick={checkoutButton}>CHECKOUT</button>
+        </div>
+    );
+
 }
+
+export default Checkout;

@@ -13,10 +13,9 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <Router>
-        <Route exact path = '/'>
-          <img src='images/pizza_photo.png' />
-          <p>Pizza is great.</p>
-        </Route>
+      <Route exact path="/checkout">
+        <Checkout />
+      </Route>
         <Route exact path = '/admin'>
           <Admin/>
         </Route>
