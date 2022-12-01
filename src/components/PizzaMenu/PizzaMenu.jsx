@@ -4,7 +4,7 @@ import PizzaList from "../PizzaList/PizzaList";
 export default function PizzaMenu() {
 
   const history = useHistory();
- const continueOrder = () => {
+  const continueOrder = () => {
     history.push('/customerinfo');
   }
 
