@@ -3,14 +3,17 @@ import { useSelector, useDispatch } from "react-redux"
 export default function PizzaListItem({ pizza }) {
   
   const dispatch = useDispatch();
-
+  
+  // returns boolean - whether or not current pizza exists in order
   const inCurrentOrder = useSelector(store => {
     return store.currentOrder.pizzas.some(p => p.id == pizza.id)
-  }) // returns boolean
+  })
+
   console.log('pizza', pizza.id, 'in current order:', inCurrentOrder);
 
-  const handleClick = (evt) => {
+  const handleAdd = (evt) => {
     evt.preventDefault();
+
     dispatch({ type: 'ADD_PIZZA',
       payload: {
         id: pizza.id,
@@ -21,10 +24,8 @@ export default function PizzaListItem({ pizza }) {
 
   const handleRemove = (evt) => {
     evt.preventDefault();
-    console.log('in handleRemove');
-    dispatch({ type: 'REMOVE_PIZZA',
-      payload: pizza.id
-    })
+
+    dispatch({ type: 'REMOVE_PIZZA', payload: pizza.id })
   }
 
   return (<div className="pizza-menu-item">
@@ -34,6 +35,6 @@ export default function PizzaListItem({ pizza }) {
     <p className="pizza-menu-description">{pizza.description}</p>
     {inCurrentOrder ? 
       <button onClick={handleRemove}>Remove</button> :
-      <button onClick={handleClick}>Add</button>}
+      <button onClick={handleAdd}>Add</button>}
   </div>)
 }

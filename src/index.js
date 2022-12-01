@@ -36,7 +36,7 @@ const currentOrder = (state = orderPlaceholder, action) => {
       return {...state, pizzas: [ ...state.pizzas, action.payload ]}
     case 'REMOVE_PIZZA':
       console.log('in remove_pizza');
-      return state;
+      return {...state, pizzas: [ ...state.pizzas.filter(p => p.id != action.payload) ]}
     default:
       break;
   }
