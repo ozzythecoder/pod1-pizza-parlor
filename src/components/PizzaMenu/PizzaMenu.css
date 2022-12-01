@@ -1,3 +1,7 @@
+#menu-container {
+  margin: 50px 0;
+}
+
 .pizza-list {
   display: flex;
   flex-wrap: wrap;

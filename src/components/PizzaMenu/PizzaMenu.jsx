@@ -1,6 +1,8 @@
 import { useHistory } from "react-router-dom";
 import PizzaList from "../PizzaList/PizzaList";
 
+import './PizzaMenu.css'
+
 export default function PizzaMenu() {
 
   const history = useHistory();
@@ -8,7 +10,7 @@ export default function PizzaMenu() {
     history.push('/customerinfo');
   }
 
-  return (<div>
+  return (<div id="menu-container">
     <h2>Menu</h2>
     <PizzaList />
     <button onClick={continueOrder}>Next</button>

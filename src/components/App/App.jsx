@@ -15,13 +15,13 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <Router>
-        <Route exact path = '/'>
+        <Route exact path='/'>
           <PizzaMenu />
         </Route>
-        <Route exact path ="/customerInfo">
+        <Route exact path='/customerInfo'>
           <CustomerInfoForm />
         </Route>
-        <Route exact path = '/admin'>
+        <Route exact path='/admin'>
           <Admin/>
         </Route>
       </Router>
