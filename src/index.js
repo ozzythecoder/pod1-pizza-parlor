@@ -34,6 +34,9 @@ const currentOrder = (state = orderPlaceholder, action) => {
   switch (action.type) {
     case 'ADD_PIZZA':
       return {...state, pizzas: [ ...state.pizzas, action.payload ]}
+    case 'REMOVE_PIZZA':
+      console.log('in remove_pizza');
+      return state;
     default:
       break;
   }
