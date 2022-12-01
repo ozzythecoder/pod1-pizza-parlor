@@ -24,6 +24,17 @@ const orderPlaceholder = {
   }]
 }
 
+const pizzaList = (state = [], action) => {
+
+  switch (action.type) {
+    case 'GET_PIZZAS':
+      return action.payload
+    default:
+      break;
+  }
+  return state;
+}
+
 const currentOrder = (state = orderPlaceholder, action) => {
 
 
@@ -32,7 +43,7 @@ const currentOrder = (state = orderPlaceholder, action) => {
 
 const reduxStore = createStore(
   combineReducers(
-    {}
+    {currentOrder, pizzaList}
   ),
   applyMiddleware(logger)
 );
