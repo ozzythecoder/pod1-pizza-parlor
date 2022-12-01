@@ -38,10 +38,7 @@ function Checkout() {
         axios({
             method: 'POST',
             url: '/api/order',
-            data: 
-               objectToSend
-            
-            
+            data: objectToSend
         }).then( response => {
             //Order confirmation 
             alert('Your order is confirmed!')
@@ -60,11 +57,11 @@ function Checkout() {
     return(
         <div>
 
+            <h1>Checkout</h1>
             <p>{ currentOrder.customer_name}</p>
             <p>{ currentOrder.street_address}</p>
             <p>{ currentOrder.city}</p>
             <p>{ currentOrder.zip}</p>
-            <h1>Checkout</h1>
 
             {/* TABLE START*/}
             <table>
