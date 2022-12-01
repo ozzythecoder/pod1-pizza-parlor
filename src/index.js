@@ -33,10 +33,17 @@ const currentOrder = (state = orderPlaceholder, action) => {
   
   switch (action.type) {
     case 'ADD_PIZZA':
-      return {...state, pizzas: [ ...state.pizzas, action.payload ]}
+      return {...state,
+        pizzas: [ ...state.pizzas,
+          { id: action.payload.id,
+            quantity: action.payload.quantity }
+          ],
+        total: +state.total + +action.payload.price}
     case 'REMOVE_PIZZA':
       console.log('in remove_pizza');
-      return {...state, pizzas: [ ...state.pizzas.filter(p => p.id != action.payload) ]}
+      return {...state,
+        pizzas: [ ...state.pizzas.filter(p => p.id != action.payload.id) ],
+        total: +state.total - +action.payload.price}
     case 'ADD_CUSTOMER':
       return {...state, 
         customer_name: action.payload.customer_name, 
