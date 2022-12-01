@@ -1,0 +1,27 @@
+
+.App-header {
+    background-color: #222;
+    height: 70px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .App-title {
+    font-size: 2em;
+    flex-grow: 2;
+    text-align: left;
+  }
+
+  #cart{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  #total{
+    align-self: flex-end;
+    padding-bottom: 4px;
+
+  }

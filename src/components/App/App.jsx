@@ -13,16 +13,22 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route exact path="/">
-          <Header text="Prime Pizza" />
+        <Route exact path = '/'>
+          <Header
+            text="Prime Pizza"
+            showCart={true}/>
           <PizzaMenu />
         </Route>
-        <Route exact path="/customerInfo">
-          <Header text="Prime Pizza" />
+        <Route exact path ="/customerInfo">
+        <Header
+            text="Prime Pizza"
+            showCart={true}/>
           <CustomerInfoForm />
         </Route>
         <Route exact path="/checkout">
-          <Header text="Prime Pizza" />
+          <Header 
+            text="Prime Pizza"
+            showCart={true} />
           <Checkout />
         </Route>
         <Route exact path="/admin">
