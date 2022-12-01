@@ -14,10 +14,9 @@ export default function CustomerInfoForm() {
   const [zip, setZip] = useState('');
   const [type, setType] = useState('');
 
-
+// addCustomer function for adding the customer information to the store
   const addCustomer = (event) => {
     event.preventDefault();
-    //dispatch
     dispatch({
       type: 'ADD_CUSTOMER',
       payload: {
@@ -33,7 +32,7 @@ export default function CustomerInfoForm() {
     setStreetAddress('');
     setCity('');
     setZip('');
-
+    setType('');
   }
 
   return (
@@ -47,12 +46,11 @@ export default function CustomerInfoForm() {
           <input required type="text" placeholder="Zip Code" value={zip} onChange={(event) => setZip(event.target.value)}></input>
         </div>
         <div className='delivery-submit'>
-          {/* Radial */}
-
+          <input type="radio" name="JTP" id="carryout" value={type} onClick={(event) => setType(event.target.id)} >Carryout</input>
+          <input type="radio" name="JTP" id="delivery" value={type} onClick={(event) => setType(event.target.id)} >Delivery</input>
           <button type="submit">NEXT</button>
         </div>
       </div>
     </form>
-
   )
 }
