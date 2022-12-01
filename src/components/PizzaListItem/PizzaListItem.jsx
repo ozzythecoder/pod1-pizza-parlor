@@ -17,7 +17,8 @@ export default function PizzaListItem({ pizza }) {
     dispatch({ type: 'ADD_PIZZA',
       payload: {
         id: pizza.id,
-        quantity: 1
+        quantity: 1,
+        price: pizza.price
       }})
 
   }
@@ -25,7 +26,7 @@ export default function PizzaListItem({ pizza }) {
   const handleRemove = (evt) => {
     evt.preventDefault();
 
-    dispatch({ type: 'REMOVE_PIZZA', payload: pizza.id })
+    dispatch({ type: 'REMOVE_PIZZA', payload: {id: pizza.id, price: pizza.price} })
   }
 
   return (<div className="pizza-menu-item">

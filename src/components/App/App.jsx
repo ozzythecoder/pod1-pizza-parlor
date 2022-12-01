@@ -15,12 +15,14 @@ function App() {
       <Router>
         <Route exact path = '/'>
           <Header
-            text="Prime Pizza"/>
+            text="Prime Pizza"
+            showCart='true'/>
           <PizzaMenu />
         </Route>
         <Route exact path ="/customerInfo">
         <Header
-            text="Prime Pizza"/>
+            text="Prime Pizza"
+            showCart='true'/>
           <CustomerInfoForm />
         </Route>
         <Route exact path = '/admin'>
