@@ -24,9 +24,11 @@ export default function PizzaList() {
 
   const menuList = pizzas.map(pizza => {
     return (
-      <PizzaListItem pizza={pizza} />
+      <PizzaListItem key={pizza.id} pizza={pizza} />
     )
   })
 
-  return (<div></div>)
+  return (<div>
+    {menuList}
+  </div>)
 }

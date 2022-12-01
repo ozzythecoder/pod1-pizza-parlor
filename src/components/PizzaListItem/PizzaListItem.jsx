@@ -1,7 +1,9 @@
 
 export default function PizzaListItem({ pizza }) {
-
-  console.table(pizza);
   
-  return (<div></div>)
+  return (<div>
+    <h3>{pizza.name}</h3>
+    <p>{pizza.price}</p>
+    <p>{pizza.description}</p>
+  </div>)
 }
