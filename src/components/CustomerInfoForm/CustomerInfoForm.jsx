@@ -12,19 +12,28 @@ export default function CustomerInfoForm() {
   const [streetAddress, setStreetAddress] = useState('');
   const [city, setCity] = useState('');
   const [zip, setZip] = useState('');
-  const [delivery, setDelivery] = useState('');
+  const [type, setType] = useState('');
 
 
   const addCustomer = (event) => {
     event.preventDefault();
     //dispatch
-
+    dispatch({
+      type: 'ADD_CUSTOMER',
+      payload: {
+        customer_name: customerName,
+        street_address: streetAddress,
+        city: city,
+        zip: zip,
+        type: type
+      }
+    })
     // Clear the input fields
     setCustomerName('');
     setStreetAddress('');
     setCity('');
     setZip('');
-    
+
   }
 
   return (
