@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './CustomerInfoForm.css';
+import { useHistory } from 'react-router-dom';
 
 export default function CustomerInfoForm() {
 
   // dispatch
   const dispatch = useDispatch();
+
+  //history
+  const history = useHistory();
 
   // local states
   const [customerName, setCustomerName] = useState('');
@@ -33,6 +37,7 @@ export default function CustomerInfoForm() {
     setCity('');
     setZip('');
     setType('');
+    history.push('/checkout');
   }
 
   return (
