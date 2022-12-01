@@ -1,8 +1,43 @@
 .form-container{
   display: flex;
+  width: 65%;
+  justify-content: center;
+  margin: auto;
+  min-width: 600px;
+  max-width: 1000px;
+}
+.txt-fields{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: flex-end;
+  width: 50%;
 }
 
 .delivery-submit{
   display: flex;
   flex-direction: column;
+  width: 50%;
+}
+
+.next-btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.txt-input{
+  margin: 10px;
+  max-width: 250px;
+  min-width: 200px;
+  margin-right: 5%;
+}
+
+.radios{
+  flex-grow: 1;
+}
+
+.radio-input{
+  margin: 10px;
 }

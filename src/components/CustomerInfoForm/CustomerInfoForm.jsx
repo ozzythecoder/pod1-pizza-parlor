@@ -40,21 +40,21 @@ export default function CustomerInfoForm() {
       <h2>Step 2: Customer Information</h2>
       <div className='form-container'>
         <div className='txt-fields'>
-          <input required type="text" placeholder="Name" value={customerName} onChange={(event) => setCustomerName(event.target.value)} />
+          <input required className='txt-input' type="text" placeholder="Name" value={customerName} onChange={(event) => setCustomerName(event.target.value)} />
           <br />
-          <input required type="text" placeholder="Street Address" value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
+          <input required className='txt-input' type="text" placeholder="Street Address" value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
           <br />
-          <input required type="text" placeholder="City" value={city} onChange={(event) => setCity(event.target.value)} />
+          <input required className='txt-input' type="text" placeholder="City" value={city} onChange={(event) => setCity(event.target.value)} />
           <br />
-          <input required type="text" placeholder="Zip Code" value={zip} onChange={(event) => setZip(event.target.value)} />
+          <input required className='txt-input' type="text" placeholder="Zip Code" value={zip} onChange={(event) => setZip(event.target.value)} />
         </div>
         <div className='delivery-submit'>
-          <div>
-            <input type="radio" name="JTP" id="carryout" value={type} onClick={(event) => setType(event.target.id)} /> Carryout
+          <div className='radios'>
+            <input className='radio-input' type="radio" name="JTP" id="carryout" value={type} onClick={(event) => setType(event.target.id)} /> Carryout
             <br />
-            <input type="radio" name="JTP" id="delivery" value={type} onClick={(event) => setType(event.target.id)} /> Delivery
+            <input className='radio-input' type="radio" name="JTP" id="delivery" value={type} onClick={(event) => setType(event.target.id)} /> Delivery
           </div>
-          <div>
+          <div className='next-btn'>
             <button type="submit">NEXT</button>
           </div>
         </div>
