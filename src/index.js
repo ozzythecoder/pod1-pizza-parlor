@@ -34,6 +34,8 @@ const currentOrder = (state = orderPlaceholder, action) => {
   switch (action.type) {
     case 'ADD_PIZZA':
       return {...state, pizzas: [ ...state.pizzas, action.payload ]}
+    default:
+      break;
   }
 
   return state;
