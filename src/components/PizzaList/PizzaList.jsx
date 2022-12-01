@@ -1,7 +1,9 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function PizzaList() {
+
+  useEffect(() => { fetchPizzas() }, [])
 
   const fetchPizzas = () => {
 
@@ -13,13 +15,5 @@ export default function PizzaList() {
 
   }
 
-  useEffect(() => {
-    fetchPizzas();
-  }, [])
-
-  return (
-    <div>
-
-    </div>
-  )
+  return (<div></div>)
 }

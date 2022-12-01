@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import PizzaList from "../PizzaList/PizzaList";
 
 export default function PizzaMenu() {
 
@@ -8,6 +9,7 @@ export default function PizzaMenu() {
   }
 
   return (<div>
+    <PizzaList />
     <button onClick={continueOrder}>Next</button>
   </div>)
 }
