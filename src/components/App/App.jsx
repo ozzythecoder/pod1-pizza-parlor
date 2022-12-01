@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route} from 'react-router-dom';
 
+import PizzaMenu from '../PizzaMenu/PizzaMenu';
 
 function App() {
 
@@ -13,8 +14,7 @@ function App() {
       </header>
       <Router>
         <Route exact path = '/'>
-          <img src='images/pizza_photo.png' />
-          <p>Pizza is great.</p>
+          <PizzaMenu />
         </Route>
       </Router>
   
