@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import PizzaListItem from "../PizzaListItem/PizzaListItem";
-import './PizzaList.css'
 
 export default function PizzaList() {
 
