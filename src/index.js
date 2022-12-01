@@ -24,7 +24,7 @@ const orderPlaceholder = {
 const pizzaList = (state = [], action) => {
 
   switch (action.type) {
-    case 'GET_PIZZAS':
+    case 'SET_PIZZAS':
       return action.payload
     default:
       break;
