@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route} from 'react-router-dom';
+import Admin from '../Admin/Admin';
 
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
         <Route exact path = '/'>
           <img src='images/pizza_photo.png' />
           <p>Pizza is great.</p>
+        </Route>
+        <Route exact path = '/admin'>
+          <Admin/>
         </Route>
       </Router>
   
