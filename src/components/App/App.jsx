@@ -5,6 +5,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import CustomerInfoForm from "../CustomerInfoForm/CustomerInfoForm";
 import Admin from "../Admin/Admin";
 
+import Checkout from "../Checkout/Checkout";
 import PizzaMenu from "../PizzaMenu/PizzaMenu";
 import Header from "../Header/Header";
 
@@ -19,6 +20,10 @@ function App() {
         <Route exact path="/customerInfo">
           <Header text="Prime Pizza" />
           <CustomerInfoForm />
+        </Route>
+        <Route exact path="/checkout">
+          <Header text="Prime Pizza" />
+          <Checkout />
         </Route>
         <Route exact path="/admin">
           <Header text="Prime Pizza Orders" />
