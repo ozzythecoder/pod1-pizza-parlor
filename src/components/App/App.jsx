@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route} from 'react-router-dom';
 import CustomerInfoForm from '../CustomerInfoForm/CustomerInfoForm';
+import Admin from '../Admin/Admin';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route exact path ="/customerInfo">
           <CustomerInfoForm />
+        </Route>
+        <Route exact path = '/admin'>
+          <Admin/>
         </Route>
       </Router>
   
