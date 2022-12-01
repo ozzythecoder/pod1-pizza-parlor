@@ -55,9 +55,9 @@ export default function CustomerInfoForm() {
         </div>
         <div className='delivery-submit'>
           <div className='radios'>
-            <input className='radio-input' type="radio" name="JTP" id="carryout" value={type} onClick={(event) => setType(event.target.id)} /> Carryout
+            <input required className='radio-input' type="radio" name="JTP" id="carryout" value={type} onClick={(event) => setType(event.target.id)} /> Carryout
             <br />
-            <input className='radio-input' type="radio" name="JTP" id="delivery" value={type} onClick={(event) => setType(event.target.id)} /> Delivery
+            <input required className='radio-input' type="radio" name="JTP" id="delivery" value={type} onClick={(event) => setType(event.target.id)} /> Delivery
           </div>
           <div className='next-btn'>
             <button type="submit">NEXT</button>
