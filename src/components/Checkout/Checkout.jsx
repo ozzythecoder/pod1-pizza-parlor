@@ -20,6 +20,7 @@ function Checkout() {
     */
   //POST
   const currentOrder = useSelector((store) => store.currentOrder);
+  const pizzaList = useSelector(store => store.pizzaList)
 
   const objectToSend = {
     customer_name: currentOrder.customer_name,
@@ -35,26 +36,36 @@ function Checkout() {
 
     console.log(objectToSend);
 
-    // axios({
-    //   method: "POST",
-    //   url: "/api/order",
-    //   data: objectToSend,
-    // })
-    //   .then((response) => {
-    //     //Order confirmation
-    //     alert("Your order is confirmed!");
-    //     //Clear the cart
-    //     dispatch({
-    //       type: "CLEAR_CART",
-    //     });
+    axios({
+      method: "POST",
+      url: "/api/order",
+      data: objectToSend,
+    })
+      .then((response) => {
+        //Order confirmation
+        alert("Your order is confirmed!");
+        //Clear the cart
+        dispatch({
+          type: "CLEAR_CART",
+        });
 
-    //     //Navigate the user to screen-one
-    //     history.push("/");
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
+        //Navigate the user to screen-one
+        history.push("/");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
+
+  const pizzas = currentOrder.pizzas.map((p, i) => {
+    let thisPizza = pizzaList.filter(e => e.id == p.id)[0]
+    return (
+      <tr key={i}>
+        <td>{thisPizza.name}</td>
+        <td>{thisPizza.price}</td>
+      </tr>
+    )
+  })
 
   return (
     <div>
@@ -75,16 +86,13 @@ function Checkout() {
         </thead>
         {/* TABLE DATA */}
         <tbody>
-          <tr>
-            <td>{/* PIZZA NAME */}</td>
-            <td>{/* PIZZA COST */}</td>
-          </tr>
+          {pizzas}
         </tbody>
       </table>
       {/* TABLE END */}
 
       {/* TOTAL */}
-      <p>Total: </p>
+      <p>Total: {currentOrder.total}</p>
 
       {/* CHECKOUT BUTTON */}
       <button onClick={checkoutButton}>CHECKOUT</button>
