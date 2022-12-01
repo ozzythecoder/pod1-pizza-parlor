@@ -12,10 +12,6 @@ function Checkout() {
     const history = useHistory();
     const dispatch = useDispatch(); // establish dispatch
 
-
-  
-
-
     /*
     Checkout button should post to the database, 
     show a confirmation dialog, 
@@ -23,15 +19,16 @@ function Checkout() {
     and nav (history) the user back to the pizza page (screen-one).
     */
     //POST
+    const currentOrder = useSelector(store => store.currentOrder)
 
     const objectToSend = {
-        customer_name : customer.customer_name,
-        street_address : customer.street_address,
-        city : customer.city,
-        zip : customer.zip,
-        total : pizza.price,
-        type : customer.type,
-        pizzas : [pizza]
+        customer_name : currentOrder.customer_name,
+        street_address : currentOrder.street_address,
+        city :  currentOrder.city,
+        zip :  currentOrder.zip,
+        total : '',
+        type : '',
+        pizzas : ''
     }
 
 
@@ -63,35 +60,39 @@ function Checkout() {
     return(
         <div>
 
-            <p>{customer.customer_name}</p>
-            <p>{customer.street_address}</p>
-            <p>{customer.city}</p>
-            <p>{customer.zip}</p>
+            <p>{ currentOrder.customer_name}</p>
+            <p>{ currentOrder.street_address}</p>
+            <p>{ currentOrder.city}</p>
+            <p>{ currentOrder.zip}</p>
             <h1>Checkout</h1>
 
             {/* TABLE START*/}
             <table>
                 {/* TABLE HEADERS */}
-                <tr>
-                    <th>Name</th>
-                    <th>Cost</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
                 {/* TABLE DATA */}
-                <tr>
-                    <td>
-                        {/* PIZZA NAME */}
-                        {pizza.name}
-                    </td>
-                    <td>
-                        {/* PIZZA COST */}
-                        {pizza.price}
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                            {/* PIZZA NAME */}
+                            
+                        </td>
+                        <td>
+                            {/* PIZZA COST */}
+                            
+                        </td>
+                    </tr>
+                </tbody>
             </table> 
             {/* TABLE END */}
 
             {/* TOTAL */}
-            <p>Total: {pizza.price}</p>
+            <p>Total: </p>
 
             {/* CHECKOUT BUTTON */}
             <button onClick={checkoutButton}>CHECKOUT</button>

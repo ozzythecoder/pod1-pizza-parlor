@@ -4,7 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route} from 'react-router-dom';
 import CustomerInfoForm from '../CustomerInfoForm/CustomerInfoForm';
 import Admin from '../Admin/Admin';
-
+import Checkout from '../Checkout/Checkout';
 import PizzaMenu from '../PizzaMenu/PizzaMenu';
 
 function App() {
