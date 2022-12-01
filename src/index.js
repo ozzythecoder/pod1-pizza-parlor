@@ -15,17 +15,14 @@ const orderPlaceholder = {
   "zip": "",
   "total": 0,
   "type": "",
-  "pizzas": [{
-    "id": "",
-    "quantity": 0
-  }]
+  "pizzas": []
 }
 
 const pizzaList = (state = [], action) => {
 
   switch (action.type) {
-    case 'GET_PIZZAS':
-      return action.payload
+    case 'SET_PIZZAS':
+      return action.payload;
     default:
       break;
   }
@@ -33,7 +30,16 @@ const pizzaList = (state = [], action) => {
 }
 
 const currentOrder = (state = orderPlaceholder, action) => {
-
+  
+  switch (action.type) {
+    case 'ADD_PIZZA':
+      return {...state, pizzas: [ ...state.pizzas, action.payload ]}
+    case 'REMOVE_PIZZA':
+      console.log('in remove_pizza');
+      return {...state, pizzas: [ ...state.pizzas.filter(p => p.id != action.payload) ]}
+    default:
+      break;
+  }
 
   return state;
 }
