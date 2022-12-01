@@ -6,7 +6,11 @@ export default function PizzaListItem({ pizza }) {
 
   const handleClick = (evt) => {
     evt.preventDefault();
-    console.log('in handleClick', pizza.id);
+    dispatch({ type: 'ADD_PIZZA',
+      payload: {
+        id: pizza.id,
+        quantity: 1
+      }})
   }
 
   return (<div className="pizza-menu-item">
