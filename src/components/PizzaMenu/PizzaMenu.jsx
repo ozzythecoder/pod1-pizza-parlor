@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function PizzaMenu() {
 
-
+  const history = useHistory();
 
   const fetchPizzas = () => {
 
@@ -15,11 +16,15 @@ export default function PizzaMenu() {
 
   }
 
+  const continueOrder = () => {
+    history.push('/customerinfo');
+  }
+
   useEffect(() => {
     fetchPizzas();
   }, [])
 
   return (<div>
-
+    <button onClick={continueOrder}>Next</button>
   </div>)
 }
