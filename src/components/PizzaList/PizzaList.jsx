@@ -15,8 +15,7 @@ export default function PizzaList() {
 
     axios.get('/api/pizza')
       .then(res => {
-        console.log('got pizzas:');
-        console.table(res.data)
+        console.log('got pizzas');
         dispatch({ type: 'SET_PIZZAS', payload: res.data })
       }).catch(err => console.log('fetchPizzas', err))
 
