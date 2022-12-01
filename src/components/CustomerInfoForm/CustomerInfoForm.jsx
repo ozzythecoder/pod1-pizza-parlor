@@ -46,7 +46,7 @@ export default function CustomerInfoForm() {
           <br />
           <input required className='txt-input' type="text" placeholder="City" value={city} onChange={(event) => setCity(event.target.value)} />
           <br />
-          <input required className='txt-input' type="text" placeholder="Zip Code" value={zip} onChange={(event) => setZip(event.target.value)} />
+          <input required className='txt-input' type="number" placeholder="Zip Code" value={zip} onChange={(event) => setZip(event.target.value)} />
         </div>
         <div className='delivery-submit'>
           <div className='radios'>
