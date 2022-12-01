@@ -40,7 +40,7 @@ const currentOrder = (state = orderPlaceholder, action) => {
     case 'ADD_CUSTOMER':
       return {...state, 
         customer_name: action.payload.customer_name, 
-        street_address: action.payload.customer_name,
+        street_address: action.payload.street_address,
         city: action.payload.city,
         zip: action.payload.zip,
         type: action.payload.type
