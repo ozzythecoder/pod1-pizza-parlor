@@ -9,18 +9,15 @@ import App from './components/App/App';
 import './index.css';
 
 const orderPlaceholder = {
-  "customer_name": "Donatello",
-  "street_address": "20 W 34th St",
-  "city": "New York",
-  "zip": "10001",
-  "total": "27.98",
-  "type": "Pickup",
+  "customer_name": "",
+  "street_address": "",
+  "city": "",
+  "zip": "",
+  "total": 0,
+  "type": "",
   "pizzas": [{
-    "id": "1",
-    "quantity": "1"
-  },{
-    "id": "2",
-    "quantity": "1"
+    "id": "",
+    "quantity": 0
   }]
 }
 
