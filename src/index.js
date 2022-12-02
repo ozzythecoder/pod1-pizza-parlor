@@ -52,6 +52,8 @@ const currentOrder = (state = orderPlaceholder, action) => {
         zip: action.payload.zip,
         type: action.payload.type
       }
+    case 'CLEAR_CART':
+      return orderPlaceholder;
     default:
       break;
   }
