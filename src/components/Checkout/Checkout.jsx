@@ -29,6 +29,7 @@ function Checkout() {
     zip: currentOrder.zip,
     total: currentOrder.total,
     pizzas: currentOrder.pizzas,
+    type: currentOrder.type
   };
 
   const checkoutButton = () => {
@@ -42,14 +43,14 @@ function Checkout() {
       data: objectToSend,
     })
       .then((response) => {
-        //Order confirmation
+        // Order confirmation
         alert("Your order is confirmed!");
-        //Clear the cart
+        // Clear the cart
         dispatch({
           type: "CLEAR_CART",
         });
 
-        //Navigate the user to screen-one
+        // Navigate the user to screen-one
         history.push("/");
       })
       .catch((err) => {
@@ -70,6 +71,7 @@ function Checkout() {
   return (
     <div>
       <h1>Checkout</h1>
+      
       <p>{currentOrder.customer_name}</p>
       <p>{currentOrder.street_address}</p>
       <p>{currentOrder.city}</p>
