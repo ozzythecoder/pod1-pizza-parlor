@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
+import "./PizzaListItem.css";
 
 export default function PizzaListItem({ pizza }) {
   
@@ -31,7 +32,7 @@ export default function PizzaListItem({ pizza }) {
 
   return (<div className="pizza-menu-item">
     <h3 className="pizza-menu-name">{pizza.name}</h3>
-    <img className="pizza-menu-image" src={pizza.image_path} width="240px" />
+    <img className="pizza-menu-image" src={pizza.image_path} />
     <p className="pizza-menu-price">${pizza.price}</p>
     <p className="pizza-menu-description">{pizza.description}</p>
     {inCurrentOrder ? 
