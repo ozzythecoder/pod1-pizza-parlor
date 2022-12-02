@@ -32,3 +32,26 @@ CREATE TABLE "line_item" (
 	"pizza_id" INT REFERENCES "pizza",
 	"quantity" INT NOT NULL
 );
+
+-- Updates for new pictures
+
+update "pizza" set "image_path" = 'images/baconpizza.jpeg' 
+where "name" = 'Onomatopizza';
+
+update "pizza" set "image_path" = 'images/tomatosoup.jpeg' 
+where "name" = 'Tomato Soup';
+
+update "pizza" set "image_path" = 'images/pepperoni.jpeg' 
+where "name" = 'Pepperoni';
+
+update "pizza" set "image_path" = 'images/rainbow.jpeg' 
+where "name" = 'Over the Rainbow';
+
+update "pizza" set "image_path" = 'images/firedragon.jpeg' 
+where "name" = 'Chinese Firedragon';
+
+update "pizza" set "image_path" = 'images/baddate.jpeg' 
+where "name" = 'Bad Date';
+
+update "pizza" set "image_path" = 'images/cheese.jpeg' 
+where "name" = 'Another Little Pizza My Heart';
